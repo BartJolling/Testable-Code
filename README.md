@@ -1,10 +1,11 @@
 Testable-Code
 =============
 > Examples of how to write testable code
+
 #### Why Unit Testing?
-Testable code forces you to write clean separated code => maintainability
-Tests can be automated to run after every change => safety net
-Bottom-up approach: first test parts of the program before testing the program itself
+- Testable code forces you to write clean separated code => maintainability
+- Tests can be automated to run after every change => safety net
+- Bottom-up approach: first test parts of the program before testing the program itself
 
 Demo 01: Test Driven Development
 --------------------------------
