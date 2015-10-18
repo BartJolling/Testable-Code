@@ -13,10 +13,10 @@ namespace Demo01.TestDrivenDevelopment
             if (string.IsNullOrWhiteSpace(numbers))
                 return 0;
 
-            var nummbersArray = numbers.Split(',');
+            var numbersArray = numbers.Split(',');
             int sum = 0;
 
-            foreach (var numberString in nummbersArray)
+            foreach (var numberString in numbersArray)
             {
                 sum += int.Parse(numberString);
             }

@@ -9,7 +9,7 @@ namespace Demo01.TestDrivenDevelopment.Test
         #region Requirement 1: The Add method accepts a comma-delimeted string of integers
 
         [TestMethod]
-        public void SC01WhenIntegersArePassedThenNoExceptionIsThrown()
+        public void SC01_WhenIntegersArePassedThenNoExceptionIsThrown()
         {
             //Arrange
             string input = "7,9,10,15";
@@ -21,7 +21,7 @@ namespace Demo01.TestDrivenDevelopment.Test
 
         [TestMethod]
         [ExpectedException(typeof(FormatException))]
-        public void SC01WhenNonNumbersArePassedThenExceptionIsThrown()
+        public void SC01_WhenNonNumbersArePassedThenExceptionIsThrown()
         {
             //Arrange
             string input = "7,9,F,15";

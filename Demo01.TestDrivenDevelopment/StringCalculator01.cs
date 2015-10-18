@@ -10,9 +10,9 @@ namespace Demo01.TestDrivenDevelopment
     {
         public void Add(string numbers)
         {
-            var nummbersArray = numbers.Split(',');
+            var numbersArray = numbers.Split(',');
 
-            foreach(var numberString in nummbersArray)
+            foreach(var numberString in numbersArray)
             {
                 int number = int.Parse(numberString);
             }
