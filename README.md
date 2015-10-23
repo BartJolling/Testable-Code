@@ -49,6 +49,8 @@ Users upload a character separated values (CSV) file containing expenses reports
   - The first column is the user id
   - The second column is the expenses category
   - The 12 next columns are the monthly expenses expressed in euro
+
+
   |EmployeeId|Category|January|February|March|April|May|June|July|August|September|October|November|December|
   |:---------|:-------|------:|-------:|----:|----:|--:|---:|---:|-----:|--------:|------:|-------:|-------:|
   |1|Travel|92|92|92|92|92|92|92|92|92|92|92|92|
