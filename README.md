@@ -44,7 +44,7 @@ Dependency Injection is integral part of this architecture. It encourages a bett
 ... And common utility and infrastructure classes are injected into the application services.
 
 #### Demo Example Requirements
-Users upload a character separated values (CSV) file containing expenses reports of Capgemini employees
+Users upload a character separated values (CSV) file containing expenses reports of our employees
 - The applications accepts a CSV file. 
   - The first column is the user id
   - The second column is the expenses category
