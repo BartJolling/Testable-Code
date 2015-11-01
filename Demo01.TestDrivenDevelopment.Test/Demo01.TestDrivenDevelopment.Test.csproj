@@ -55,6 +55,8 @@
     <Compile Include="StringCalculator02Test.cs" />
     <Compile Include="StringCalculator03Test.cs" />
     <Compile Include="StringCalculator04Test.cs" />
+    <Compile Include="Is_A_Leap_Year.cs" />
+    <Compile Include="Is_Not_A_Leap_Year.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Demo01.TestDrivenDevelopment\Demo01.TestDrivenDevelopment.csproj">

@@ -29,8 +29,6 @@ namespace Demo01.TestDrivenDevelopment.Test
 
             //Act
             calculator.Add(input);
-
-            //Assert
         }
 
         #endregion
@@ -39,7 +37,7 @@ namespace Demo01.TestDrivenDevelopment.Test
         #region Requirement 2: For an empty string the method will return 0
 
         [TestMethod]
-        public void SC03_When_Empty_String_Is_Passed_Then_Return0()
+        public void SC03_When_Empty_String_Is_Passed_Then_Return_0()
         {
             //Arrange
             string input = string.Empty;
