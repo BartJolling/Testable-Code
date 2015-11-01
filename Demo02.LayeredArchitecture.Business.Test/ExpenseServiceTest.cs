@@ -12,7 +12,7 @@ namespace Demo02.LayeredArchitecture.Business.Test
     public class ExpenseServiceTest
     {
         [TestMethod]
-        public void LA02_WhenReceivingValidFileThenExpensesAreSummedByEmployeeAndCategory()
+        public void LA02_When_Receiving_Valid_File_Then_Expenses_Are_Summed_By_Employee_And_Category()
         {
             //Arrange
             string fileContent = "EmployeeId,Category,January,February,March,April,May,June,July,August,September,October,November,December" + Environment.NewLine +
@@ -39,7 +39,7 @@ namespace Demo02.LayeredArchitecture.Business.Test
         }
 
         [TestMethod]
-        public void LA02_WhenReceivingValidFileThenExpensesAreSummedByEmployeeAndCategory_Moq()
+        public void LA02_When_Receiving_Valid_File_Then_Expenses_Are_Summed_By_Employee_And_Category_Moq()
         {
             //Arrange
             string fileContent = "EmployeeId,Category,January,February,March,April,May,June,July,August,September,October,November,December" + Environment.NewLine +

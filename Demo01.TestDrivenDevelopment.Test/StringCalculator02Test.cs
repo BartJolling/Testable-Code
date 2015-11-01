@@ -9,7 +9,7 @@ namespace Demo01.TestDrivenDevelopment.Test
         #region Requirement 1: The Add method accepts a comma-delimeted string of integers
 
         [TestMethod]
-        public void SC02_WhenIntegersArePassedThenNoExceptionIsThrown()
+        public void SC02_When_Integers_Are_Passed_Then_No_Exception_Is_Thrown()
         {
             //Arrange
             string input = "7,9,10,15";
@@ -21,7 +21,7 @@ namespace Demo01.TestDrivenDevelopment.Test
 
         [TestMethod]
         [ExpectedException(typeof(FormatException))]
-        public void SC02_WhenNonNumbersArePassedThenExceptionIsThrown()
+        public void SC02_When_Non_Numbers_Are_Passed_Then_Exception_Is_Thrown()
         {
             //Arrange
             string input = "7,9,F,15";
@@ -39,7 +39,7 @@ namespace Demo01.TestDrivenDevelopment.Test
         #region Requirement 2: For an empty string the method will return 0
 
         [TestMethod]
-        public void SC02_WhenEmptyStringIsPassedThenReturn0()
+        public void SC02_When_Empty_String_Is_Passed_Then_Return_0()
         {
             //Arrange
             string input = string.Empty;
@@ -58,7 +58,7 @@ namespace Demo01.TestDrivenDevelopment.Test
         #region Requirement 3: Method will return their sum of numbers
 
         [TestMethod]
-        public void SC02_WhenIntegersArePassedThenReturnTheirSum()
+        public void SC02_When_Integers_Are_Passed_Then_Return_Their_Sum()
         {
             //Arrange
             string input = "7,9,10,15,-1";

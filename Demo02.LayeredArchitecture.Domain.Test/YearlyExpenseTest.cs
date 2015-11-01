@@ -8,7 +8,7 @@ namespace Demo02.LayeredArchitecture.Domain.Test
     {
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void LA01_ExpensesFromBefore1962AreInvalid()
+        public void LA01_Expenses_From_Before_1962_Are_Invalid()
         {
             //Arrange
             YearlyExpense expense = new YearlyExpense()

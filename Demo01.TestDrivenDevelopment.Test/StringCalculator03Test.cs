@@ -9,7 +9,7 @@ namespace Demo01.TestDrivenDevelopment.Test
         #region Requirement 1: The Add method accepts a comma-delimeted string of integers
 
         [TestMethod]
-        public void SC03_WhenIntegersArePassedThenNoExceptionIsThrown()
+        public void SC03_When_Integers_Are_Passed_Then_No_Exception_Is_Thrown()
         {
             //Arrange
             string input = "7,9,10,15";
@@ -21,7 +21,7 @@ namespace Demo01.TestDrivenDevelopment.Test
 
         [TestMethod]
         [ExpectedException(typeof(FormatException))]
-        public void SC03_WhenNonNumbersArePassedThenExceptionIsThrown()
+        public void SC03_When_Non_Numbers_Are_Passed_Then_Exception_Is_Thrown()
         {
             //Arrange
             string input = "7,9,F,15";
@@ -39,7 +39,7 @@ namespace Demo01.TestDrivenDevelopment.Test
         #region Requirement 2: For an empty string the method will return 0
 
         [TestMethod]
-        public void SC03_WhenEmptyStringIsPassedThenReturn0()
+        public void SC03_When_Empty_String_Is_Passed_Then_Return0()
         {
             //Arrange
             string input = string.Empty;
@@ -58,7 +58,7 @@ namespace Demo01.TestDrivenDevelopment.Test
         #region Requirement 3: Method will return their sum of numbers
 
         [TestMethod]
-        public void SC03_WhenIntegersArePassedThenReturnTheirSum()
+        public void SC03_When_Integers_Are_Passed_Then_Return_Their_Sum()
         {
             //Arrange
             string input = "7,9,10,15,-1";
@@ -77,7 +77,7 @@ namespace Demo01.TestDrivenDevelopment.Test
         #region Requirement 4: Support user specified delimiters
 
         [TestMethod]
-        public void SC03_WhenIntegersArePassedWithCustomDelimiterThenReturnTheirSum()
+        public void SC03_When_Integers_Are_Passed_With_Custom_Delimiter_Then_Return_Their_Sum()
         {
             //Arrange
             string input = "7;9;10;15;-1";
