@@ -11,7 +11,7 @@ namespace Demo02.LayeredArchitecture.Facade
     {
         public static ExpenseService Create()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["ExpensesDatabase"].ConnectionString;
             IDbConnection connection = new SqlConnection(connectionString);
             IExpenseRepository repository = new ExpenseRepository(connection);
             return new ExpenseService(repository);

@@ -9,10 +9,10 @@ using Moq;
 namespace Demo02.LayeredArchitecture.Business.Test
 {
     [TestClass]
-    public class ExpenseServiceTest
+    public class Expenses_Are_Summed_By_Employee_And_Category_Test
     {
         [TestMethod]
-        public void LA02_When_Receiving_Valid_File_Then_Expenses_Are_Summed_By_Employee_And_Category()
+        public void LA02_When_Receiving_Valid_File()
         {
             //Arrange
             string fileContent = "EmployeeId,Category,January,February,March,April,May,June,July,August,September,October,November,December" + Environment.NewLine +
@@ -39,7 +39,7 @@ namespace Demo02.LayeredArchitecture.Business.Test
         }
 
         [TestMethod]
-        public void LA02_When_Receiving_Valid_File_Then_Expenses_Are_Summed_By_Employee_And_Category_Moq()
+        public void LA02_When_Receiving_Valid_File_Moq()
         {
             //Arrange
             string fileContent = "EmployeeId,Category,January,February,March,April,May,June,July,August,September,October,November,December" + Environment.NewLine +

@@ -13,18 +13,32 @@ namespace Demo02.LayeredArchitecture.Business
     {
         public IExpenseRepository ExpenseRepository { get; set; }
 
+        public event Action<YearlyExpense> ExpensePersisted;
+
         public ExpenseService(IExpenseRepository expenseRepository)
         {
             if (expenseRepository == null)
                 throw new ArgumentNullException("ExpenseRepository");
 
             this.ExpenseRepository = expenseRepository;
+            this.ExpenseRepository.YearlyExpenseSaved += ExpenseRepository_YearlyExpenseSaved;
+        }
+
+        private void ExpenseRepository_YearlyExpenseSaved(YearlyExpense expense)
+        {
+            if (ExpensePersisted != null)
+            {
+                //Simulate Processing
+                System.Threading.Thread.Sleep(500);
+
+                ExpensePersisted.Invoke(expense);
+            }
         }
 
         public void PersistFile(string fileContent, char separator, int fiscalYear)
         {
             if (string.IsNullOrWhiteSpace(fileContent))
-                throw new ArgumentNullException("Provide valid file content");
+                throw new ArgumentNullException("fileContent");
 
             var expenses = ParseFileContent(fileContent, separator, 2015);
 
@@ -34,7 +48,7 @@ namespace Demo02.LayeredArchitecture.Business
         private IReadOnlyCollection<YearlyExpense> ParseFileContent(string fileContent, char separator, int fiscalYear)
         {
             if (string.IsNullOrWhiteSpace(fileContent))
-                throw new ArgumentNullException("Provide valid file content");
+                throw new ArgumentNullException("fileContent");
 
             var expenses = new List<YearlyExpense>();
             var stringCalculator = new StringCalculator04();

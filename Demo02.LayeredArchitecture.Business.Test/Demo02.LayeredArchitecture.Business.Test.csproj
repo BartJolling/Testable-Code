@@ -55,7 +55,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ExpenseRepositoryMock.cs" />
-    <Compile Include="ExpenseServiceTest.cs" />
+    <Compile Include="Expenses_Are_Summed_By_Employee_And_Category_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

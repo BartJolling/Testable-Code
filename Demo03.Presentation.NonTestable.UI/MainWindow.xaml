@@ -1,0 +1,41 @@
+﻿<Window x:Class="Demo03.Presentation.NonTestable.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Grid Margin="4">
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="0,5,0,5" />
+            </Style>
+        </Grid.Resources>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Filename:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="Filename" Text="C:\Users\Bart\Documents\Expenses_2015.txt"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Separator:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="Separator"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Fiscal Year:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="FiscalYear"/>
+        
+        <Button Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Right" MinWidth="80" Margin="3" Content="Upload" Click="Button_Click" IsDefault="True"  />
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Expenses:" HorizontalAlignment="Right"/>
+        <DataGrid ItemsSource="{Binding}" Grid.Row="4" Grid.Column="1" x:Name="ExpenseGrid" />
+    </Grid>
+    
+    
+</Window>

@@ -58,3 +58,14 @@ Users upload a character separated values (CSV) file containing expenses reports
   |2|Travel|1500|0|0|1700|0|0|1400|0|0|2400|0|0|
   |2|Parking|200|0|0|150|0|0|235|0|0|175|0|0|
   |2|Hotel|700|0|0|750|0|0|335|0|0|1075|0|0|
+
+
+Demo 03: Presentation
+---------------------
+#### Non Testable UI
+Putting code directly in the code-behind will create a tight coupling between the presentation logic and the actual view. This makes it impossible to write automated tests for the presentation logic.
+
+#### Model-View-ViewModel
+This demo is inspired by "Jason Dolinger on Model-View-ViewModel""
+http://blog.lab49.com/archives/2650
+
