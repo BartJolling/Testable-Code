@@ -15,5 +15,7 @@ namespace Demo02.LayeredArchitecture.Business.Test
         {
             this.ReceivedExpenses = expenses;
         }
+
+        public event Action<Domain.YearlyExpense> YearlyExpenseSaved;
     }
 }

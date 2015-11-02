@@ -35,6 +35,7 @@ To solve coupling, one could introduce Dependency Injection of these classes.
 
 #### The Onion Architecture
 http://jeffreypalermo.com/blog/the-onion-architecture-part-1/
+
 Dependency Injection is integral part of this architecture. It encourages a better separation of concerns:
 - Infrastructure concerns are implemented in classes that can be injected into the lower layers
 - The Presentation layer depends on ...
@@ -63,9 +64,13 @@ Users upload a character separated values (CSV) file containing expenses reports
 Demo 03: Presentation
 ---------------------
 #### Non Testable UI
-Putting code directly in the code-behind will create a tight coupling between the presentation logic and the actual view. This makes it impossible to write automated tests for the presentation logic.
+Using the view as a datacontainer and putting code directly in the code-behind will create a tight coupling between the presentation logic and the actual view. This makes it impossible to write automated tests for the presentation logic.
 
 #### Model-View-ViewModel
-This demo is inspired by "Jason Dolinger on Model-View-ViewModel""
+Decouple the View from the presentation logic by applying the Model-View-ViewModel pattern. This demo is inspired by "Jason Dolinger on Model-View-ViewModel"
 http://blog.lab49.com/archives/2650
 
+- Move data out of the code-behind of the view and into the ViewModel and expose them as public properties
+- Bind the controls on the view to the public properties of the ViewModel
+- Inject external dependencies into the ViewModel
+- Inject the ViewModel into the View from App.xaml.cs

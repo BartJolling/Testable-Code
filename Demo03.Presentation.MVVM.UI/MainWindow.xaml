@@ -1,0 +1,47 @@
+﻿<Window x:Class="Demo03.Presentation.MVVM.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Demo03.Presentation.MVVM.UI"
+        Title="MainWindow" Height="350" Width="525">
+    
+    <Window.Resources>
+        <local:NullableValueConverter x:Key="NullableValueConverter" />
+    </Window.Resources>
+    
+    <Grid Margin="4">
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="0,5,0,5" />
+            </Style>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Filename:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Filename, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Separator:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Separator, Converter={StaticResource NullableValueConverter}, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Fiscal Year:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding FiscalYear, Converter={StaticResource NullableValueConverter}, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Button Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Right" MinWidth="80" Margin="3" Content="Upload" IsDefault="True" Command="{Binding PersistFileCommand}"  />
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Expenses:" HorizontalAlignment="Right"/>
+        <DataGrid ItemsSource="{Binding YearlyExpenses}" Grid.Row="4" Grid.Column="1" />
+
+        <Label Grid.Row="5" Grid.Column="1" Content="{Binding ErrorMessage}" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>

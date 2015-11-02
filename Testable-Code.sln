@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo02.LayeredArchitecture.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo03.Presentation.NonTestable.UI", "Demo03.Presentation.NonTestable.UI\Demo03.Presentation.NonTestable.UI.csproj", "{E4491C6B-B5DA-4B40-9C22-C0C2397A08AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo03.Presentation.MVVM.UI", "Demo03.Presentation.MVVM.UI\Demo03.Presentation.MVVM.UI.csproj", "{1268E531-BD6E-4662-AAC2-26ECBC5F5455}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo03.Presentation.MVVM.UI.Test", "Demo03.Presentation.MVVM.UI.Test\Demo03.Presentation.MVVM.UI.Test.csproj", "{A31A75F1-0342-4699-B11C-5061914F1033}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,14 @@ Global
 		{E4491C6B-B5DA-4B40-9C22-C0C2397A08AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4491C6B-B5DA-4B40-9C22-C0C2397A08AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4491C6B-B5DA-4B40-9C22-C0C2397A08AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1268E531-BD6E-4662-AAC2-26ECBC5F5455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1268E531-BD6E-4662-AAC2-26ECBC5F5455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1268E531-BD6E-4662-AAC2-26ECBC5F5455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1268E531-BD6E-4662-AAC2-26ECBC5F5455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A31A75F1-0342-4699-B11C-5061914F1033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A31A75F1-0342-4699-B11C-5061914F1033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A31A75F1-0342-4699-B11C-5061914F1033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A31A75F1-0342-4699-B11C-5061914F1033}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
