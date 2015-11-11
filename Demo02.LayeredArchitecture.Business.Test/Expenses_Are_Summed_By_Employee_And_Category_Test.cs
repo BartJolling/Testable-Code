@@ -22,10 +22,13 @@ namespace Demo02.LayeredArchitecture.Business.Test
                                  "2,Parking,200,0,0,150,0,0,235,0,0,175,0,0" + Environment.NewLine +
                                  "2,Hotel,700,0,0,750,0,0,335,0,0,1075,0,0" + Environment.NewLine;
             
-            //Act
+            
             var repository = new ExpenseRepositoryMock();
             ExpenseService service = new ExpenseService(repository);
+
+            //Act
             service.PersistFile(fileContent, ',', 2015);
+
             IEnumerable<YearlyExpense> expenses = repository.ReceivedExpenses;
 
             //Assert
@@ -53,7 +56,10 @@ namespace Demo02.LayeredArchitecture.Business.Test
 
             var repository = new Mock<IExpenseRepository>();
             repository.Setup(r => r.SaveYearExpenses(It.IsAny<IEnumerable<YearlyExpense>>())).
-                Callback<IEnumerable<YearlyExpense>>(e => expenses = e);
+                Callback<IEnumerable<YearlyExpense>>(e =>
+                    {
+                        expenses = e;
+                    });
 
             //Act
             ExpenseService service = new ExpenseService(repository.Object);
