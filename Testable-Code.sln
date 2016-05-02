@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo01.TestDrivenDevelopment", "Demo01.TestDrivenDevelopment\Demo01.TestDrivenDevelopment.csproj", "{6AFA49A6-E60B-493B-9DF0-2EA55F09A630}"
 EndProject
@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo01.TestDrivenDevelopmen
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{8EF725F0-99FF-4060-BB03-3D735B181117}"
 	ProjectSection(SolutionItems) = preProject
+		Expenses_2015.txt = Expenses_2015.txt
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
