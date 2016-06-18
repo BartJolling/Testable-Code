@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace Demo03.Presentation.MVVM.UI.Test
 {
@@ -15,6 +16,8 @@ namespace Demo03.Presentation.MVVM.UI.Test
         public void When_Valid_Filename_Separator_FiscalYear_Are_Provided()
         {
             //Arrange
+            AutoResetEvent expensesSaved = new AutoResetEvent(false);
+
             var repository = new Mock<IExpenseRepository>();
             repository.Setup(r => r.SaveYearExpenses(It.IsAny<IEnumerable<YearlyExpense>>())).
                 Callback<IEnumerable<YearlyExpense>>(expenses =>
@@ -26,6 +29,8 @@ namespace Demo03.Presentation.MVVM.UI.Test
                     Assert.AreEqual(7000, expenses.Single(e => e.EmployeeId == 2 && e.Category == "Travel").Amount);
                     Assert.AreEqual(760, expenses.Single(e => e.EmployeeId == 2 && e.Category == "Parking").Amount);
                     Assert.AreEqual(2860, expenses.Single(e => e.EmployeeId == 2 && e.Category == "Hotel").Amount);
+
+                    expensesSaved.Set();
                 });
 
             ExpenseService expenseService = new ExpenseService(repository.Object);
@@ -40,6 +45,7 @@ namespace Demo03.Presentation.MVVM.UI.Test
             viewModel.PersistFile();
 
             //Assert
+            expensesSaved.WaitOne();
             Assert.AreEqual("File Expenses_2015.txt Submitted", viewModel.ErrorMessage);
         }
     }
