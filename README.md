@@ -10,9 +10,9 @@ Testable-Code
 Demo 01: Test Driven Development
 --------------------------------
 #### Write small automated tests first
-This requires the developer to fully understand requirements
+This requires the developer to fully understand requirements. 
 Initially a new test fails, so add code & refactor until the test pass. 
-Tests serves as documentation.
+Tests serve as documentation. 
 
 #### Demo Example Requirements
 Write a 'StringCalculator' class that accepts integers and return their sum:
