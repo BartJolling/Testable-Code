@@ -68,7 +68,8 @@ Using the view as a datacontainer and putting code directly in the code-behind w
 
 #### Model-View-ViewModel
 Decouple the View from the presentation logic by applying the Model-View-ViewModel pattern. This demo is inspired by "Jason Dolinger on Model-View-ViewModel"
-http://blog.lab49.com/archives/2650
+
+[![Jason Dolinger on Model-View-ViewModel](http://img.youtube.com/vi/BRxnZahCPFQ/0.jpg)](http://www.youtube.com/watch?v=BRxnZahCPFQ)
 
 - Move data out of the code-behind of the view and into the ViewModel and expose them as public properties
 - Bind the controls on the view to the public properties of the ViewModel
