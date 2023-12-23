@@ -1,11 +1,10 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo01.TestDrivenDevelopment", "Demo01.TestDrivenDevelopment\Demo01.TestDrivenDevelopment.csproj", "{6AFA49A6-E60B-493B-9DF0-2EA55F09A630}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo01.TestDrivenDevelopment", "Demo01.TestDrivenDevelopment\Demo01.TestDrivenDevelopment.csproj", "{6AFA49A6-E60B-493B-9DF0-2EA55F09A630}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo01.TestDrivenDevelopment.Test", "Demo01.TestDrivenDevelopment.Test\Demo01.TestDrivenDevelopment.Test.csproj", "{B6B9AA09-327F-4150-AD85-4A894E6D0603}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo01.TestDrivenDevelopment.Test", "Demo01.TestDrivenDevelopment.Test\Demo01.TestDrivenDevelopment.Test.csproj", "{B6B9AA09-327F-4150-AD85-4A894E6D0603}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{8EF725F0-99FF-4060-BB03-3D735B181117}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,27 +13,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo02.LayeredArchitecture.Domain", "Demo02.LayeredArchitecture.Domain\Demo02.LayeredArchitecture.Domain.csproj", "{255DDCF7-228A-49DD-9017-0EF015A005A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Domain", "Demo02.LayeredArchitecture.Domain\Demo02.LayeredArchitecture.Domain.csproj", "{255DDCF7-228A-49DD-9017-0EF015A005A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo02.LayeredArchitecture.Domain.Test", "Demo02.LayeredArchitecture.Domain.Test\Demo02.LayeredArchitecture.Domain.Test.csproj", "{422D887D-96AE-43A5-B378-FB42EC627483}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Domain.Test", "Demo02.LayeredArchitecture.Domain.Test\Demo02.LayeredArchitecture.Domain.Test.csproj", "{422D887D-96AE-43A5-B378-FB42EC627483}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo02.LayeredArchitecture.Business.Test", "Demo02.LayeredArchitecture.Business.Test\Demo02.LayeredArchitecture.Business.Test.csproj", "{0DE61420-F728-48DD-976C-D61599458447}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Business.Test", "Demo02.LayeredArchitecture.Business.Test\Demo02.LayeredArchitecture.Business.Test.csproj", "{0DE61420-F728-48DD-976C-D61599458447}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo02.LayeredArchitecture.Business", "Demo02.LayeredArchitecture.Business\Demo02.LayeredArchitecture.Business.csproj", "{4441435A-3C7F-47D8-93A4-96591EE62F22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Business", "Demo02.LayeredArchitecture.Business\Demo02.LayeredArchitecture.Business.csproj", "{4441435A-3C7F-47D8-93A4-96591EE62F22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo02.LayeredArchitecture.Infrastructure", "Demo02.LayeredArchitecture.Infrastructure\Demo02.LayeredArchitecture.Infrastructure.csproj", "{B17BD602-11F0-426B-BAE9-116ECDFBE744}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Infrastructure", "Demo02.LayeredArchitecture.Infrastructure\Demo02.LayeredArchitecture.Infrastructure.csproj", "{B17BD602-11F0-426B-BAE9-116ECDFBE744}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo02.LayeredArchitecture.Infrastructure.Interfaces", "Demo02.LayeredArchitecture.Infrastructure.Interfaces\Demo02.LayeredArchitecture.Infrastructure.Interfaces.csproj", "{6413D897-F63A-43D4-BD02-0B261CA4FCB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Infrastructure.Interfaces", "Demo02.LayeredArchitecture.Infrastructure.Interfaces\Demo02.LayeredArchitecture.Infrastructure.Interfaces.csproj", "{6413D897-F63A-43D4-BD02-0B261CA4FCB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo02.LayeredArchitecture.Facade", "Demo02.LayeredArchitecture.Facade\Demo02.LayeredArchitecture.Facade.csproj", "{4FFE0A4D-3EE1-404E-82DB-D170B566F9DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Facade", "Demo02.LayeredArchitecture.Facade\Demo02.LayeredArchitecture.Facade.csproj", "{4FFE0A4D-3EE1-404E-82DB-D170B566F9DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo03.Presentation.NonTestable.UI", "Demo03.Presentation.NonTestable.UI\Demo03.Presentation.NonTestable.UI.csproj", "{E4491C6B-B5DA-4B40-9C22-C0C2397A08AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo03.Presentation.NonTestable.UI", "Demo03.Presentation.NonTestable.UI\Demo03.Presentation.NonTestable.UI.csproj", "{E4491C6B-B5DA-4B40-9C22-C0C2397A08AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo03.Presentation.MVVM.UI", "Demo03.Presentation.MVVM.UI\Demo03.Presentation.MVVM.UI.csproj", "{1268E531-BD6E-4662-AAC2-26ECBC5F5455}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo03.Presentation.MVVM.UI", "Demo03.Presentation.MVVM.UI\Demo03.Presentation.MVVM.UI.csproj", "{1268E531-BD6E-4662-AAC2-26ECBC5F5455}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo03.Presentation.MVVM.UI.Test", "Demo03.Presentation.MVVM.UI.Test\Demo03.Presentation.MVVM.UI.Test.csproj", "{A31A75F1-0342-4699-B11C-5061914F1033}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo03.Presentation.MVVM.UI.Test.Old", "Demo03.Presentation.MVVM.UI.Test.Old\Demo03.Presentation.MVVM.UI.Test.Old.csproj", "{A31A75F1-0342-4699-B11C-5061914F1033}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Demo02.LayeredArchitecture.Database", "Demo02.LayeredArchitecture.Database\Demo02.LayeredArchitecture.Database.sqlproj", "{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo03.Presentation.MVVM.UI.Test", "Demo03.Presentation.MVVM.UI.Test\Demo03.Presentation.MVVM.UI.Test.csproj", "{C8FC1F9B-FAE8-455B-B8DE-BCF854EE4307}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,8 +97,15 @@ Global
 		{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C8FC1F9B-FAE8-455B-B8DE-BCF854EE4307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8FC1F9B-FAE8-455B-B8DE-BCF854EE4307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8FC1F9B-FAE8-455B-B8DE-BCF854EE4307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8FC1F9B-FAE8-455B-B8DE-BCF854EE4307}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {981368EA-B568-4930-AD1A-75D9E90B80AE}
 	EndGlobalSection
 EndGlobal

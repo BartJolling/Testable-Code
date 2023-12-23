@@ -1,7 +1,11 @@
 ﻿using Demo02.LayeredArchitecture.Business;
 using Demo02.LayeredArchitecture.Domain;
 using Demo02.LayeredArchitecture.Infrastructure.Interfaces;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 
 namespace Demo03.Presentation.MVVM.UI.Test
 {

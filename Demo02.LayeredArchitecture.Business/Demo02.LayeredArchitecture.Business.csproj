@@ -1,68 +1,21 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4441435A-3C7F-47D8-93A4-96591EE62F22}</ProjectGuid>
+    <TargetFramework>net8.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Demo02.LayeredArchitecture.Business</RootNamespace>
-    <AssemblyName>Demo02.LayeredArchitecture.Business</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyTitle>Demo02.LayeredArchitecture.Business</AssemblyTitle>
+    <Product>Demo02.LayeredArchitecture.Business</Product>
+    <Copyright>Copyright ©  2015</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <ProjectReference Include="..\Demo01.TestDrivenDevelopment\Demo01.TestDrivenDevelopment.csproj" />
+    <ProjectReference Include="..\Demo02.LayeredArchitecture.Domain\Demo02.LayeredArchitecture.Domain.csproj" />
+    <ProjectReference Include="..\Demo02.LayeredArchitecture.Infrastructure.Interfaces\Demo02.LayeredArchitecture.Infrastructure.Interfaces.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExpenseService.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Demo01.TestDrivenDevelopment\Demo01.TestDrivenDevelopment.csproj">
-      <Project>{6afa49a6-e60b-493b-9df0-2ea55f09a630}</Project>
-      <Name>Demo01.TestDrivenDevelopment</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Demo02.LayeredArchitecture.Domain\Demo02.LayeredArchitecture.Domain.csproj">
-      <Project>{255ddcf7-228a-49dd-9017-0ef015a005a9}</Project>
-      <Name>Demo02.LayeredArchitecture.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Demo02.LayeredArchitecture.Infrastructure.Interfaces\Demo02.LayeredArchitecture.Infrastructure.Interfaces.csproj">
-      <Project>{6413d897-f63a-43d4-bd02-0b261ca4fcb9}</Project>
-      <Name>Demo02.LayeredArchitecture.Infrastructure.Interfaces</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
