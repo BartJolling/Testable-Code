@@ -31,11 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo03.Presentation.NonTest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo03.Presentation.MVVM.UI", "Demo03.Presentation.MVVM.UI\Demo03.Presentation.MVVM.UI.csproj", "{1268E531-BD6E-4662-AAC2-26ECBC5F5455}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo03.Presentation.MVVM.UI.Test.Old", "Demo03.Presentation.MVVM.UI.Test.Old\Demo03.Presentation.MVVM.UI.Test.Old.csproj", "{A31A75F1-0342-4699-B11C-5061914F1033}"
-EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Demo02.LayeredArchitecture.Database", "Demo02.LayeredArchitecture.Database\Demo02.LayeredArchitecture.Database.sqlproj", "{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo03.Presentation.MVVM.UI.Test", "Demo03.Presentation.MVVM.UI.Test\Demo03.Presentation.MVVM.UI.Test.csproj", "{C8FC1F9B-FAE8-455B-B8DE-BCF854EE4307}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo03.Presentation.MVVM.UI.Test", "Demo03.Presentation.MVVM.UI.Test\Demo03.Presentation.MVVM.UI.Test.csproj", "{C8FC1F9B-FAE8-455B-B8DE-BCF854EE4307}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,10 +85,6 @@ Global
 		{1268E531-BD6E-4662-AAC2-26ECBC5F5455}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1268E531-BD6E-4662-AAC2-26ECBC5F5455}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1268E531-BD6E-4662-AAC2-26ECBC5F5455}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A31A75F1-0342-4699-B11C-5061914F1033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A31A75F1-0342-4699-B11C-5061914F1033}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A31A75F1-0342-4699-B11C-5061914F1033}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A31A75F1-0342-4699-B11C-5061914F1033}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
