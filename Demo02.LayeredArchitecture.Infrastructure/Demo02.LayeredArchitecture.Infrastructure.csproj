@@ -11,7 +11,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Demo02.LayeredArchitecture.Domain\Demo02.LayeredArchitecture.Domain.csproj" />
-    <ProjectReference Include="..\Demo02.LayeredArchitecture.Infrastructure.Interfaces\Demo02.LayeredArchitecture.Infrastructure.Interfaces.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />

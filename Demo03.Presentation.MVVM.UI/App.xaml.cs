@@ -1,14 +1,4 @@
-﻿using Demo02.LayeredArchitecture.Business;
-using Demo02.LayeredArchitecture.Facade;
-using Demo02.LayeredArchitecture.Infrastructure;
-using Demo02.LayeredArchitecture.Infrastructure.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Demo02.LayeredArchitecture.Facade;
 using System.Windows;
 
 namespace Demo03.Presentation.MVVM.UI
@@ -22,10 +12,11 @@ namespace Demo03.Presentation.MVVM.UI
         {
             base.OnStartup(e);
 
-            MainWindowViewModel viewModel = new MainWindowViewModel(ExpenseServiceFactory.Create());
-
-            MainWindow window = new MainWindow();
-            window.ViewModel = viewModel;
+            var viewModel = new MainWindowViewModel(ExpenseServiceFactory.Create());
+            var window = new MainWindow
+            {
+                ViewModel = viewModel
+            };
             window.Show();
         }
     }

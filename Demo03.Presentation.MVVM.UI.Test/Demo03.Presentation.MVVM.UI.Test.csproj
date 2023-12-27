@@ -18,8 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Demo02.LayeredArchitecture.Business\Demo02.LayeredArchitecture.Business.csproj" />
-    <ProjectReference Include="..\Demo02.LayeredArchitecture.Infrastructure.Interfaces\Demo02.LayeredArchitecture.Infrastructure.Interfaces.csproj" />
+    <ProjectReference Include="..\Demo02.LayeredArchitecture.Application\Demo02.LayeredArchitecture.Application.csproj" />
     <ProjectReference Include="..\Demo03.Presentation.MVVM.UI\Demo03.Presentation.MVVM.UI.csproj" />
   </ItemGroup>
 

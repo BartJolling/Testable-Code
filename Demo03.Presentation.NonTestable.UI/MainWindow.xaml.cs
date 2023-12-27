@@ -1,22 +1,12 @@
-﻿using Demo02.LayeredArchitecture.Business;
+﻿using Demo02.LayeredArchitecture.Application;
 using Demo02.LayeredArchitecture.Domain;
 using Demo02.LayeredArchitecture.Facade;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Demo03.Presentation.NonTestable.UI
 {
@@ -27,7 +17,7 @@ namespace Demo03.Presentation.NonTestable.UI
     {
         private ExpenseService _expenseService = null;
 
-        private ObservableCollection<YearlyExpense> _yearlyExpenses = new ObservableCollection<YearlyExpense>();
+        private ObservableCollection<YearlyExpense> _yearlyExpenses = [];
 
         private ExpenseService ExpenseService
         {
@@ -58,7 +48,6 @@ namespace Demo03.Presentation.NonTestable.UI
         {
             string filename = this.Filename.Text;
             var separators = this.Separator.Text.ToCharArray();
-            int fiscalYear = 0;
 
             if (string.IsNullOrWhiteSpace(filename))
             {
@@ -72,7 +61,7 @@ namespace Demo03.Presentation.NonTestable.UI
                 return;
             }
 
-            if (!int.TryParse(this.FiscalYear.Text, out fiscalYear))
+            if (!int.TryParse(this.FiscalYear.Text, out int fiscalYear))
             {
                 MessageBox.Show("Provide a valid fiscal year", "Error", MessageBoxButton.OK);
                 return;

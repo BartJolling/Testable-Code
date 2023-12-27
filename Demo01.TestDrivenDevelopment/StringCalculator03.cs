@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Demo01.TestDrivenDevelopment
+﻿namespace Demo01.TestDrivenDevelopment
 {
     public class StringCalculator03
     {
         public int Add(string numbers)
         {
-            return this.Add(numbers, ',');
+            return Add(numbers, ',');
         }
 
         public int Add(string numbers, char delimiter)

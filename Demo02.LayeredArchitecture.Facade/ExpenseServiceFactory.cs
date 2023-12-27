@@ -1,10 +1,9 @@
-﻿using Demo02.LayeredArchitecture.Business;
+﻿using Demo02.LayeredArchitecture.Application;
+using Demo02.LayeredArchitecture.Domain;
 using Demo02.LayeredArchitecture.Infrastructure;
-using Demo02.LayeredArchitecture.Infrastructure.Interfaces;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Configuration;
-using System.Data;
-using Microsoft.Data.SqlClient;
 
 namespace Demo02.LayeredArchitecture.Facade
 {
@@ -12,17 +11,16 @@ namespace Demo02.LayeredArchitecture.Facade
     {
         public static ExpenseService Create()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["ExpensesDatabase"].ConnectionString;
-            IDbConnection connection = new SqlConnection(connectionString);
-            IExpenseRepository repository = new ExpenseRepository(connection);
+            var connectionString = ConfigurationManager.ConnectionStrings["ExpensesDatabase"].ConnectionString;
+            var connection = new SqlConnection(connectionString);
+            var repository = new ExpenseRepository(connection);
             
-            return ExpenseServiceFactory.Create(repository);
+            return Create(repository);
         }
 
         public static ExpenseService Create(IExpenseRepository repository)
         {
-            if (repository == null)
-                throw new ArgumentNullException("Expense Repository");
+            ArgumentNullException.ThrowIfNull(repository);
 
             return new ExpenseService(repository);
         }

@@ -11,7 +11,7 @@ namespace Demo02.LayeredArchitecture.Domain.Test
         public void LA01_Expense_Date_Before_1962()
         {
             //Act
-            YearlyExpense expense = new YearlyExpense()
+            new YearlyExpense()
             {
                 Amount = 1000,
                 Category = "Hotel",

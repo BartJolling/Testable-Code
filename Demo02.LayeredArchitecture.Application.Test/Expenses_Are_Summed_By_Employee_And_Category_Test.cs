@@ -1,12 +1,11 @@
-﻿using System;
-using System.Linq;
+﻿using Demo02.LayeredArchitecture.Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
-using Demo02.LayeredArchitecture.Domain;
-using Demo02.LayeredArchitecture.Infrastructure.Interfaces;
 using Moq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Demo02.LayeredArchitecture.Business.Test
+namespace Demo02.LayeredArchitecture.Application.Test
 {
     [TestClass]
     public class Expenses_Are_Summed_By_Employee_And_Category_Test
@@ -24,7 +23,7 @@ namespace Demo02.LayeredArchitecture.Business.Test
             
             
             var repository = new ExpenseRepositoryMock();
-            ExpenseService service = new ExpenseService(repository);
+            var service = new ExpenseService(repository);
 
             //Act
             service.PersistFile(fileContent, ',', 2015);
@@ -62,7 +61,7 @@ namespace Demo02.LayeredArchitecture.Business.Test
                     });
 
             //Act
-            ExpenseService service = new ExpenseService(repository.Object);
+            var service = new ExpenseService(repository.Object);
             service.PersistFile(fileContent, ',', 2015);
 
 

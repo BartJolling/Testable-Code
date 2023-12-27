@@ -10,7 +10,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Demo02.LayeredArchitecture.Business\Demo02.LayeredArchitecture.Business.csproj" />
+    <ProjectReference Include="..\Demo02.LayeredArchitecture.Application\Demo02.LayeredArchitecture.Application.csproj" />
     <ProjectReference Include="..\Demo02.LayeredArchitecture.Domain\Demo02.LayeredArchitecture.Domain.csproj" />
     <ProjectReference Include="..\Demo02.LayeredArchitecture.Facade\Demo02.LayeredArchitecture.Facade.csproj" />
   </ItemGroup>

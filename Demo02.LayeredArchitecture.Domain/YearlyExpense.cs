@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Demo02.LayeredArchitecture.Domain
 {
@@ -26,7 +22,7 @@ namespace Demo02.LayeredArchitecture.Domain
             {
                 if( value < 1962 )
                 {
-                    throw new ArgumentOutOfRangeException("Fiscal Year must be from 1962 and later.");
+                    throw new ArgumentOutOfRangeException(nameof(FiscalYear), "Fiscal Year must be from 1962 and later.");
                 }
 
                 this._fiscalYear = value;

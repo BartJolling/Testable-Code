@@ -1,11 +1,8 @@
-﻿using Demo02.LayeredArchitecture.Infrastructure.Interfaces;
+﻿using Demo02.LayeredArchitecture.Domain;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Demo02.LayeredArchitecture.Business.Test
+namespace Demo02.LayeredArchitecture.Application.Test
 {
     internal class ExpenseRepositoryMock : IExpenseRepository
     {

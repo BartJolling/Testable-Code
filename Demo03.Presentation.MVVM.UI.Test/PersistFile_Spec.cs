@@ -1,6 +1,5 @@
-﻿using Demo02.LayeredArchitecture.Business;
+﻿using Demo02.LayeredArchitecture.Application;
 using Demo02.LayeredArchitecture.Domain;
-using Demo02.LayeredArchitecture.Infrastructure.Interfaces;
 using Moq;
 
 namespace Demo03.Presentation.MVVM.UI.Test
@@ -29,8 +28,8 @@ namespace Demo03.Presentation.MVVM.UI.Test
                     expensesSaved.Set();
                 });
 
-            ExpenseService expenseService = new ExpenseService(repository.Object);
-            MainWindowViewModel viewModel = new MainWindowViewModel(expenseService)
+            var expenseService = new ExpenseService(repository.Object);
+            var viewModel = new MainWindowViewModel(expenseService)
             {
                 Filename = "Expenses_2015.txt",
                 FiscalYear = 2015,

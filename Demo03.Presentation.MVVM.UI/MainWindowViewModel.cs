@@ -1,15 +1,10 @@
-﻿using Demo02.LayeredArchitecture.Business;
+﻿using Demo02.LayeredArchitecture.Application;
 using Demo02.LayeredArchitecture.Domain;
-using Demo02.LayeredArchitecture.Facade;
-using Demo02.LayeredArchitecture.Infrastructure.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Threading;
@@ -18,14 +13,12 @@ namespace Demo03.Presentation.MVVM.UI
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
-        private ExpenseService _expenseService = null;
+        private readonly ExpenseService _expenseService = null;
         private readonly Dispatcher _currentDispatcher = null;
 
         private void FirePropertyChanged([CallerMemberName] string propertyName = null)
         {
-            var handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private ExpenseService ExpenseService
@@ -60,13 +53,12 @@ namespace Demo03.Presentation.MVVM.UI
 
         public MainWindowViewModel(ExpenseService expenseService)
         {
-            if (expenseService == null)
-                throw new ArgumentNullException("ExpenseService");
+            ArgumentNullException.ThrowIfNull(expenseService);
 
             this.Filename = @"C:\Users\Bart\Documents\Expenses_2015.txt";
             this.Separator = ',';
             this.FiscalYear = DateTime.Now.Year;
-            this.YearlyExpenses = new ObservableCollection<YearlyExpense>();
+            this.YearlyExpenses = [];
 
             this.PersistFileCommand = new PersistFileCommand(this);
 

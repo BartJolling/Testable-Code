@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Demo01.TestDrivenDevelopment
+﻿namespace Demo01.TestDrivenDevelopment
 {
     public class StringCalculator04
     {

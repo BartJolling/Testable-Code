@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Demo03.Presentation.MVVM.UI
@@ -14,6 +10,7 @@ namespace Demo03.Presentation.MVVM.UI
         {
             _viewModel = vm;
         }
+
         public bool CanExecute(object parameter)
         {
             return (

@@ -1,8 +1,7 @@
-﻿using Demo02.LayeredArchitecture.Domain;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace Demo02.LayeredArchitecture.Infrastructure.Interfaces
+namespace Demo02.LayeredArchitecture.Domain
 {
     public interface IExpenseRepository
     {

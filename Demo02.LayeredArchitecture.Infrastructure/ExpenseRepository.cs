@@ -1,4 +1,4 @@
-﻿using Demo02.LayeredArchitecture.Infrastructure.Interfaces;
+﻿using Demo02.LayeredArchitecture.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,25 +8,22 @@ namespace Demo02.LayeredArchitecture.Infrastructure
 {
     public class ExpenseRepository : IExpenseRepository
     {
-        private IDbConnection _connection = null;
+        private readonly IDbConnection _connection = null;
 
         public event Action<Domain.YearlyExpense> YearlyExpenseSaved;
 
         public ExpenseRepository(IDbConnection connection)
         {
-            if (connection == null)
-                throw new ArgumentNullException("Provide a valid database connection");
+            ArgumentNullException.ThrowIfNull(connection);
 
             this._connection = connection;
         }
 
         public void SaveYearExpenses(IEnumerable<Domain.YearlyExpense> expenses)
         {
-            if (expenses == null)
-                throw new ArgumentNullException("Provide a valid list of yearly expenses");
+            ArgumentNullException.ThrowIfNull(expenses);
 
-            if (expenses.Count() == 0)
-                return; //nothing to do
+            if (!expenses.Any()) return; //nothing to do
 
             try
             {
@@ -83,8 +80,7 @@ namespace Demo02.LayeredArchitecture.Infrastructure
             if (result != 1)
                 throw new DataException("Expected to insert 1 expense");
 
-            if( YearlyExpenseSaved != null )
-                YearlyExpenseSaved.Invoke(expense);
+            YearlyExpenseSaved?.Invoke(expense);
         }
     }
 }

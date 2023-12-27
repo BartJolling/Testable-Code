@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Demo01.TestDrivenDevelopment.Test
 {
@@ -11,8 +10,8 @@ namespace Demo01.TestDrivenDevelopment.Test
         {
             var calculator = new LeapYearCalculator();
 
-            Assert.IsFalse(calculator.isLeapYear(1977));
-            Assert.IsFalse(calculator.isLeapYear(2015));
+            Assert.IsFalse(calculator.IsLeapYear(1977));
+            Assert.IsFalse(calculator.IsLeapYear(2015));
         }
 
         [TestMethod]
@@ -20,8 +19,8 @@ namespace Demo01.TestDrivenDevelopment.Test
         {
             var calculator = new LeapYearCalculator();
 
-            Assert.IsFalse(calculator.isLeapYear(1900));
-            Assert.IsFalse(calculator.isLeapYear(2100));
+            Assert.IsFalse(calculator.IsLeapYear(1900));
+            Assert.IsFalse(calculator.IsLeapYear(2100));
         }
     }
 }

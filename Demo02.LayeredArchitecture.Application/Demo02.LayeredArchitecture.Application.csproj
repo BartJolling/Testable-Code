@@ -3,13 +3,14 @@
     <TargetFramework>net8.0</TargetFramework>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <AssemblyTitle>Demo02.LayeredArchitecture.Infrastructure.Interfaces</AssemblyTitle>
-    <Product>Demo02.LayeredArchitecture.Infrastructure.Interfaces</Product>
+    <AssemblyTitle>Demo02.LayeredArchitecture.Business</AssemblyTitle>
+    <Product>Demo02.LayeredArchitecture.Business</Product>
     <Copyright>Copyright ©  2015</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Demo01.TestDrivenDevelopment\Demo01.TestDrivenDevelopment.csproj" />
     <ProjectReference Include="..\Demo02.LayeredArchitecture.Domain\Demo02.LayeredArchitecture.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>

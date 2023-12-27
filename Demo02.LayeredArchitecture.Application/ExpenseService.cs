@@ -1,23 +1,20 @@
 ﻿using Demo01.TestDrivenDevelopment;
 using Demo02.LayeredArchitecture.Domain;
-using Demo02.LayeredArchitecture.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Demo02.LayeredArchitecture.Business
+namespace Demo02.LayeredArchitecture.Application
 {
     public class ExpenseService
     {
-        public IExpenseRepository ExpenseRepository { get; set; }
+        private IExpenseRepository ExpenseRepository { get; set; }
 
         public event Action<YearlyExpense> ExpensePersisted;
 
         public ExpenseService(IExpenseRepository expenseRepository)
         {
-            if (expenseRepository == null)
+            if (expenseRepository is null)
                 throw new ArgumentNullException("ExpenseRepository");
 
             this.ExpenseRepository = expenseRepository;

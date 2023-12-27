@@ -17,13 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Domain.Test", "Demo02.LayeredArchitecture.Domain.Test\Demo02.LayeredArchitecture.Domain.Test.csproj", "{422D887D-96AE-43A5-B378-FB42EC627483}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Business.Test", "Demo02.LayeredArchitecture.Business.Test\Demo02.LayeredArchitecture.Business.Test.csproj", "{0DE61420-F728-48DD-976C-D61599458447}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Application.Test", "Demo02.LayeredArchitecture.Application.Test\Demo02.LayeredArchitecture.Application.Test.csproj", "{0DE61420-F728-48DD-976C-D61599458447}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Business", "Demo02.LayeredArchitecture.Business\Demo02.LayeredArchitecture.Business.csproj", "{4441435A-3C7F-47D8-93A4-96591EE62F22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Application", "Demo02.LayeredArchitecture.Application\Demo02.LayeredArchitecture.Application.csproj", "{4441435A-3C7F-47D8-93A4-96591EE62F22}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Infrastructure", "Demo02.LayeredArchitecture.Infrastructure\Demo02.LayeredArchitecture.Infrastructure.csproj", "{B17BD602-11F0-426B-BAE9-116ECDFBE744}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Infrastructure.Interfaces", "Demo02.LayeredArchitecture.Infrastructure.Interfaces\Demo02.LayeredArchitecture.Infrastructure.Interfaces.csproj", "{6413D897-F63A-43D4-BD02-0B261CA4FCB9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo02.LayeredArchitecture.Facade", "Demo02.LayeredArchitecture.Facade\Demo02.LayeredArchitecture.Facade.csproj", "{4FFE0A4D-3EE1-404E-82DB-D170B566F9DB}"
 EndProject
@@ -31,9 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo03.Presentation.NonTest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo03.Presentation.MVVM.UI", "Demo03.Presentation.MVVM.UI\Demo03.Presentation.MVVM.UI.csproj", "{1268E531-BD6E-4662-AAC2-26ECBC5F5455}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Demo02.LayeredArchitecture.Database", "Demo02.LayeredArchitecture.Database\Demo02.LayeredArchitecture.Database.sqlproj", "{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo03.Presentation.MVVM.UI.Test", "Demo03.Presentation.MVVM.UI.Test\Demo03.Presentation.MVVM.UI.Test.csproj", "{C8FC1F9B-FAE8-455B-B8DE-BCF854EE4307}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Demo02.LayeredArchitecture.Database", "Demo02.LayeredArchitecture.Database\Demo02.LayeredArchitecture.Database.sqlproj", "{87770AFE-4BE6-4310-A706-D6AC4AA9E9AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,10 +67,6 @@ Global
 		{B17BD602-11F0-426B-BAE9-116ECDFBE744}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B17BD602-11F0-426B-BAE9-116ECDFBE744}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B17BD602-11F0-426B-BAE9-116ECDFBE744}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6413D897-F63A-43D4-BD02-0B261CA4FCB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6413D897-F63A-43D4-BD02-0B261CA4FCB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6413D897-F63A-43D4-BD02-0B261CA4FCB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6413D897-F63A-43D4-BD02-0B261CA4FCB9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4FFE0A4D-3EE1-404E-82DB-D170B566F9DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4FFE0A4D-3EE1-404E-82DB-D170B566F9DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FFE0A4D-3EE1-404E-82DB-D170B566F9DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -85,16 +79,16 @@ Global
 		{1268E531-BD6E-4662-AAC2-26ECBC5F5455}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1268E531-BD6E-4662-AAC2-26ECBC5F5455}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1268E531-BD6E-4662-AAC2-26ECBC5F5455}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2149C4CF-6730-4CC9-8F34-1C9BE7EC774D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{C8FC1F9B-FAE8-455B-B8DE-BCF854EE4307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C8FC1F9B-FAE8-455B-B8DE-BCF854EE4307}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8FC1F9B-FAE8-455B-B8DE-BCF854EE4307}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8FC1F9B-FAE8-455B-B8DE-BCF854EE4307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87770AFE-4BE6-4310-A706-D6AC4AA9E9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87770AFE-4BE6-4310-A706-D6AC4AA9E9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87770AFE-4BE6-4310-A706-D6AC4AA9E9AB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{87770AFE-4BE6-4310-A706-D6AC4AA9E9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87770AFE-4BE6-4310-A706-D6AC4AA9E9AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87770AFE-4BE6-4310-A706-D6AC4AA9E9AB}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

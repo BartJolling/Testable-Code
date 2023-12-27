@@ -3,8 +3,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <AssemblyTitle>Demo03.Presentation.MVVM.UI.Test</AssemblyTitle>
-    <Product>Demo03.Presentation.MVVM.UI.Test</Product>
+    <AssemblyTitle>Demo02.LayeredArchitecture.Business.Test</AssemblyTitle>
+    <Product>Demo02.LayeredArchitecture.Business.Test</Product>
     <Copyright>Copyright ©  2015</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
@@ -14,21 +14,18 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <ProjectReference Include="..\Demo02.LayeredArchitecture.Business\Demo02.LayeredArchitecture.Business.csproj" />
+    <ProjectReference Include="..\Demo02.LayeredArchitecture.Application\Demo02.LayeredArchitecture.Application.csproj" />
     <ProjectReference Include="..\Demo02.LayeredArchitecture.Domain\Demo02.LayeredArchitecture.Domain.csproj" />
-    <ProjectReference Include="..\Demo02.LayeredArchitecture.Infrastructure.Interfaces\Demo02.LayeredArchitecture.Infrastructure.Interfaces.csproj" />
-    <ProjectReference Include="..\Demo03.Presentation.MVVM.UI\Demo03.Presentation.MVVM.UI.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Expenses_2015.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Castle.Core" Version="5.1.1" />
     <PackageReference Include="Moq" Version="4.20.70" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.1.1" />
+    <PackageReference Include="coverlet.collector" Version="6.0.0" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
