@@ -82,5 +82,10 @@ namespace Demo02.LayeredArchitecture.Infrastructure
 
             YearlyExpenseSaved?.Invoke(expense);
         }
+
+        public IEnumerable<YearlyExpense> ReceivedExpenses()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

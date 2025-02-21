@@ -14,11 +14,11 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <ProjectReference Include="..\Demo02.LayeredArchitecture.Application\Demo02.LayeredArchitecture.Application.csproj" />
-    <ProjectReference Include="..\Demo02.LayeredArchitecture.Domain\Demo02.LayeredArchitecture.Domain.csproj" />
+    <ProjectReference Include="..\Demo02.LayeredArchitecture.Facade\Demo02.LayeredArchitecture.Facade.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Castle.Core" Version="5.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.2" />
     <PackageReference Include="Moq" Version="4.20.72" />
     <PackageReference Include="MSTest.TestFramework" Version="3.8.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.2" />

@@ -14,8 +14,7 @@ namespace Demo02.LayeredArchitecture.Application
 
         public ExpenseService(IExpenseRepository expenseRepository)
         {
-            if (expenseRepository is null)
-                throw new ArgumentNullException("ExpenseRepository");
+            ArgumentNullException.ThrowIfNull(expenseRepository);
 
             this.ExpenseRepository = expenseRepository;
             this.ExpenseRepository.YearlyExpenseSaved += ExpenseRepository_YearlyExpenseSaved;

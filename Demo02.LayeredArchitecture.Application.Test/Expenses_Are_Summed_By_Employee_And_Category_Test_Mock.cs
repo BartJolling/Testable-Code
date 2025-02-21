@@ -8,10 +8,10 @@ using System.Linq;
 namespace Demo02.LayeredArchitecture.Application.Test
 {
     [TestClass]
-    public class Expenses_Are_Summed_By_Employee_And_Category_Test
+    public class Expenses_Are_Summed_By_Employee_And_Category_Test_Mock
     {
         [TestMethod]
-        public void LA02_When_Receiving_Valid_File()
+        public void LA02_When_Receiving_Valid_File_Mock()
         {
             //Arrange
             string fileContent = "EmployeeId,Category,January,February,March,April,May,June,July,August,September,October,November,December" + Environment.NewLine +
@@ -28,7 +28,7 @@ namespace Demo02.LayeredArchitecture.Application.Test
             //Act
             service.PersistFile(fileContent, ',', 2015);
 
-            IEnumerable<YearlyExpense> expenses = repository.ReceivedExpenses;
+            IEnumerable<YearlyExpense> expenses = repository.ReceivedExpenses();
 
             //Assert
             Assert.IsNotNull(expenses);
@@ -63,7 +63,6 @@ namespace Demo02.LayeredArchitecture.Application.Test
             //Act
             var service = new ExpenseService(repository.Object);
             service.PersistFile(fileContent, ',', 2015);
-
 
             //Assert
             repository.VerifyAll();
