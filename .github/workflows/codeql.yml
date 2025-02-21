@@ -87,15 +87,6 @@ jobs:
         name: unit-test-results
         path: '**/*.trx'
 
-    # Optional: Publish Test Results to GitHub Actions UI
-    - name: Publish Test Results
-      uses: dorny/test-reporter@v1
-      if: always()
-      with:
-        name: Unit Test Results
-        path: '**/*.trx'
-        reporter: dotnet-trx
-
     # Perform CodeQL Analysis
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
