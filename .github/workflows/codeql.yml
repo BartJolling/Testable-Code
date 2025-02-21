@@ -77,6 +77,11 @@ jobs:
     #     echo "Run, Build Application using script"
     #     ./location_of_script_within_repo/buildscript.sh
 
+    # Run unit tests using dotnet test
+    - name: Run Unit Tests
+      run: dotnet test --configuration Debug --no-build --verbosity normal
+
+    # Perform CodeQL Analysis
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
