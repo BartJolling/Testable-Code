@@ -48,7 +48,7 @@ namespace Demo03.Presentation.MVVM.UI
                 }
             }
         }
-        
+
         public ICommand PersistFileCommand { get; set; }
 
         public MainWindowViewModel(ExpenseService expenseService)
@@ -94,12 +94,11 @@ namespace Demo03.Presentation.MVVM.UI
                 return;
             }
 
-            try
+            var result = Task.Run(() =>
             {
-                this.ErrorMessage = string.Empty;
-
-                Task.Run(() =>
+                try
                 {
+                    this.ErrorMessage = string.Empty;
                     string fileContent = string.Empty;
 
                     using (var reader = new FileInfo(this.Filename).OpenText())
@@ -108,14 +107,16 @@ namespace Demo03.Presentation.MVVM.UI
                     }
 
                     this.ExpenseService.PersistFile(fileContent, this.Separator.Value, this.FiscalYear.Value);
-                });
 
-                this.ErrorMessage = string.Format("File {0} Submitted", this.Filename);
-            }
-            catch (Exception ex)
-            {
-                this.ErrorMessage = ex.Message;
-            }
+                    this.ErrorMessage = string.Format("File {0} Uploaded", this.Filename);
+                }
+                catch (Exception ex)
+                {
+                    this.ErrorMessage = ex.Message;
+                }
+            });
+
+            this.ErrorMessage = string.Format("File {0} Submitted", this.Filename);
         }
     }
 }

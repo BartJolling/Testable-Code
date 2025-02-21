@@ -34,22 +34,22 @@ namespace Demo02.LayeredArchitecture.Application
         public void PersistFile(string fileContent, char separator, int fiscalYear)
         {
             if (string.IsNullOrWhiteSpace(fileContent))
-                throw new ArgumentNullException("fileContent");
+                throw new ArgumentNullException(nameof(fileContent));
 
             var expenses = ParseFileContent(fileContent, separator, 2015);
 
             ExpenseRepository.SaveYearExpenses(expenses);
         }
 
-        private IReadOnlyCollection<YearlyExpense> ParseFileContent(string fileContent, char separator, int fiscalYear)
+        private static IReadOnlyCollection<YearlyExpense> ParseFileContent(string fileContent, char separator, int fiscalYear)
         {
             if (string.IsNullOrWhiteSpace(fileContent))
-                throw new ArgumentNullException("fileContent");
+                throw new ArgumentNullException(nameof(fileContent));
 
             var expenses = new List<YearlyExpense>();
             var stringCalculator = new StringCalculator04();
 
-            var lines = fileContent.Split(new string[] { Environment.NewLine }, StringSplitOptions.None).Skip(1);
+            var lines = fileContent.Split([Environment.NewLine], StringSplitOptions.None).Skip(1);
 
             foreach( var line in lines)
             {
