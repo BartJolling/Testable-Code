@@ -9,8 +9,7 @@
     <ProjectGuid>{87770afe-4be6-4310-a706-d6ac4aa9e9ab}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
-    <RootPath>
-    </RootPath>
+    <RootPath></RootPath>
     <RootNamespace>Demo02.LayeredArchitecture.Database</RootNamespace>
     <AssemblyName>Demo02.LayeredArchitecture.Database</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
@@ -23,6 +22,7 @@
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
     <TargetFrameworkProfile />
+    <RestoreProjectStyle>None</RestoreProjectStyle>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
