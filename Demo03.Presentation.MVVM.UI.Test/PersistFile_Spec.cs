@@ -41,7 +41,7 @@ namespace Demo03.Presentation.MVVM.UI.Test
 
             //Assert
             expensesSaved.WaitOne();
-            Assert.AreEqual("File Expenses_2015.txt Submitted", viewModel.ErrorMessage);
+            Assert.AreEqual("File Expenses_2015.txt Uploaded", viewModel.ErrorMessage);
         }
     }
 }
