@@ -79,7 +79,7 @@ jobs:
 
     # Run unit tests using dotnet test
     - name: Run Unit Tests
-      run: dotnet test --configuration Release --no-build --verbosity normal
+      run: dotnet test --configuration Debug --no-build --verbosity normal
 
     # Perform CodeQL Analysis
     - name: Perform CodeQL Analysis
