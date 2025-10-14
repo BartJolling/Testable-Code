@@ -13,7 +13,9 @@ internal class ExpenseRepositoryMock : IExpenseRepository
         this._receivedExpenses = expenses;
     }
 
+#pragma warning disable CS0067
     public event Action<Domain.YearlyExpense> YearlyExpenseSaved;
+#pragma warning restore CS0067
 
     public IEnumerable<YearlyExpense> ReceivedExpenses()
     {

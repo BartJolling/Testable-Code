@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace Demo02.LayeredArchitecture.Application.Test
-{    
+{
     [TestClass]
     public class Expenses_Are_Summed_By_Employee_And_Category_Test_SqlLite
         {
@@ -27,7 +27,7 @@ namespace Demo02.LayeredArchitecture.Application.Test
             _dbContext = new ExpensesDbContext(options);
         }
 
-        [ClassCleanup(ClassCleanupBehavior.EndOfClass)]
+        [ClassCleanup]
         public static void ClassCleanup()
         {
             // Dispose of the DbContext

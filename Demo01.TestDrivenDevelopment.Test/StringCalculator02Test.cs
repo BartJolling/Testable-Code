@@ -20,7 +20,6 @@ namespace Demo01.TestDrivenDevelopment.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(FormatException))]
         public void SC02_When_Non_Numbers_Are_Passed_Then_Exception_Is_Thrown()
         {
             //Arrange
@@ -28,9 +27,10 @@ namespace Demo01.TestDrivenDevelopment.Test
             var calculator = new StringCalculator02();
 
             //Act
-            calculator.Add(input);
+            void act() => calculator.Add(input);
 
             //Assert
+            Assert.ThrowsExactly<FormatException>(act);
         }
 
         #endregion
