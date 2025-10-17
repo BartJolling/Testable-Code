@@ -4,6 +4,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -35,15 +36,15 @@ namespace Demo03.Presentation.MVVM.UI
         public char? Separator { get; set; }
         public int? FiscalYear { get; set; }
 
-        private string _errorMessage = string.Empty;
-        public string ErrorMessage
+        private string _statusMessage = string.Empty;
+        public string StatusMessage
         {
-            get { return _errorMessage; }
+            get { return _statusMessage; }
             set
             {
-                if (string.Compare(value, this._errorMessage) != 0)
+                if (string.Compare(value, this._statusMessage) != 0)
                 {
-                    this._errorMessage = value;
+                    this._statusMessage = value;
                     FirePropertyChanged();
                 }
             }
@@ -55,7 +56,9 @@ namespace Demo03.Presentation.MVVM.UI
         {
             ArgumentNullException.ThrowIfNull(expenseService);
 
-            this.Filename = @"C:\Users\Bart\Documents\Expenses_2015.txt";
+            var assemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!;
+
+            this.Filename =  Path.Combine(assemblyFolder, "Expenses_2015.txt");
             this.Separator = ',';
             this.FiscalYear = DateTime.Now.Year;
             this.YearlyExpenses = [];
@@ -68,6 +71,7 @@ namespace Demo03.Presentation.MVVM.UI
             this._expenseService.ExpensePersisted += ExpenseService_ExpensePersisted;
 
         }
+        
         void ExpenseService_ExpensePersisted(YearlyExpense expense)
         {
             Action dispatchAction = () => YearlyExpenses.Add(expense);
@@ -78,45 +82,40 @@ namespace Demo03.Presentation.MVVM.UI
         {
             if (string.IsNullOrWhiteSpace(this.Filename))
             {
-                this.ErrorMessage = "Provide a filename";
+                this.StatusMessage = "Provide a filename";
                 return;
             }
 
             if (this.Separator == 0)
             {
-                this.ErrorMessage = "Provide a single separator charactor";
+                this.StatusMessage = "Provide a single separator character";
                 return;
             }
 
             if (this.FiscalYear == 0)
             {
-                this.ErrorMessage = "Provide a valid fiscal year";
+                this.StatusMessage = "Provide a valid fiscal year";
                 return;
             }
 
-            var result = Task.Run(() =>
+            this.StatusMessage = $"File {this.Filename} Submitted";
+
+            Task.Run(() =>
             {
                 try
                 {
-                    this.ErrorMessage = string.Empty;
-                    string fileContent = string.Empty;
-
-                    using (var reader = new FileInfo(this.Filename).OpenText())
-                    {
-                        fileContent = reader.ReadToEnd();
-                    }
-
+                    using var reader = new FileInfo(this.Filename).OpenText();
+                    string fileContent = reader.ReadToEnd();
+                    
                     this.ExpenseService.PersistFile(fileContent, this.Separator.Value, this.FiscalYear.Value);
 
-                    this.ErrorMessage = string.Format("File {0} Uploaded", this.Filename);
+                    this.StatusMessage = $"File {this.Filename} Uploaded";
                 }
                 catch (Exception ex)
                 {
-                    this.ErrorMessage = ex.Message;
+                    this.StatusMessage = ex.Message;
                 }
             });
-
-            this.ErrorMessage = string.Format("File {0} Submitted", this.Filename);
         }
     }
 }

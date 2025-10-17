@@ -42,6 +42,6 @@
         <Label Grid.Row="4" Grid.Column="0" Content="Expenses:" HorizontalAlignment="Right"/>
         <DataGrid ItemsSource="{Binding YearlyExpenses}" Grid.Row="4" Grid.Column="1" />
 
-        <Label Grid.Row="5" Grid.Column="1" Content="{Binding ErrorMessage}" HorizontalAlignment="Right"/>
+        <Label Grid.Row="5" Grid.Column="1" Content="{Binding StatusMessage}" HorizontalAlignment="Right"/>
     </Grid>
 </Window>
