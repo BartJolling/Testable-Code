@@ -2,6 +2,14 @@
 
 This repository contains examples of how to write testable code using C#
 
+## Prerequisites
+
+Install the .NET 10 SDK to build and run the demos:
+
+```powershell
+winget install --id Microsoft.DotNet.SDK.10 --exact
+```
+
 ## Why Unit Testing?
 
 - Testable code forces you to write clean separated code => maintainability
