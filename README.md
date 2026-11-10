@@ -50,8 +50,6 @@ In a traditional layered architecture, each layer depends on the layer below it.
 
 The architecture typically looks like this:
 
-![layered architecture](https://upload.wikimedia.org/wikipedia/commons/3/3b/3-Tier-pres-dat.jpg)
-
 ```text
 ┌─────────────────────────────┐
 │       Presentation          │
