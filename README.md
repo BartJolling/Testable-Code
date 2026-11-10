@@ -44,38 +44,90 @@ dotnet test .\Demo01.TestDrivenDevelopment.Test\Demo01.TestDrivenDevelopment.Tes
 
 ## Demo 02 - Layered Architecture
 
-### A traditional Layered Architecture
+## Demo 02 – Layered Architecture
 
-Creates unnecessary coupling
+### Traditional Layered Architecture
 
-- The Presentation layer depends on ...
-- The Business layer depends on ...
-- The Data layer
-... And everything depends on common utility and infrastructure classes.
+In a traditional layered architecture, each layer depends on the layer below it. This creates a dependency chain that can make the application difficult to maintain and test.
 
-To solve coupling, one could introduce Dependency Injection of these classes.
+The architecture typically looks like this:
 
-### The Onion Architecture
+![layered architecture](https://upload.wikimedia.org/wikipedia/commons/3/3b/3-Tier-pres-dat.jpg)
 
-See [The Onion Architecture, by Jeffrey Palermo](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/)
+```text
+┌─────────────────────────────┐
+│       Presentation          │
+└──────────────┬──────────────┘
+               │ depends on
+               ▼
+┌─────────────────────────────┐
+│          Business           │
+└──────────────┬──────────────┘
+               │ depends on
+               ▼
+┌─────────────────────────────┐
+│            Data             │
+└─────────────────────────────┘
+    ▲          ▲          ▲
+    │          │          │
+    └──────────┼──────────┘
+               │
+    ┌──────────────────────┐
+    │ Common Infrastructure│
+    │   and Utilities      │
+    └──────────────────────┘
+```
 
-Dependency Injection is integral part of this architecture. It encourages a better separation of concerns:
+Each layer may also depend on shared utility and infrastructure classes. These dependencies introduce additional coupling and make it harder to change or replace individual components.
 
-- Infrastructure concerns are implemented in classes that can be injected into the lower layers
-- The Presentation layer depends on ...
-- The Application Services layer depends on ...
-- The Domain Services layer depends on ...
-- The Domain Model
-... And common utility and infrastructure classes are injected into the application services.
+Dependency Injection can help manage these infrastructure dependencies, but it does not, by itself, change the underlying dependency structure.
+
+### Onion Architecture
+
+See [The Onion Architecture, by Jeffrey Palermo](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/).
+
+Onion Architecture takes a different approach: **dependencies always point inwards, towards the domain model.**
+
+The domain model sits at the centre and has no dependency on application infrastructure or external concerns.
+
+```text
+       ┌───────────────────────────────┐
+       │         Presentation          │
+       │  ┌─────────────────────────┐  │
+       │  │    Application Services │  │
+       │  │  ┌───────────────────┐  │  │
+       │  │  │  Domain Services  │  │  │
+       │  │  │  ┌─────────────┐  │  │  │
+       │  │  │  │Domain Model │  │  │  │
+       │  │  │  └─────────────┘  │  │  │
+       │  │  └───────────────────┘  │  │
+       │  └─────────────────────────┘  │
+       └───────────────────────────────┘
+
+          Dependencies point inwards
+```
+
+Infrastructure concerns, such as database access and external services, are implemented outside the inner layers. They implement abstractions defined by the inner layers and are supplied through Dependency Injection.
+
+This means:
+
+- The Presentation layer depends on Application Services.
+- Application Services depend on Domain Services.
+- Domain Services depend on the Domain Model.
+- The Domain Model has no dependency on infrastructure.
+
+Dependency Injection is an integral part of this approach. It allows infrastructure implementations to be plugged into the application without introducing dependencies from the domain towards those implementations.
+
+The result is a more loosely coupled architecture in which the domain remains independent of infrastructure and external concerns.
 
 ### Demo 2 Example Requirements
 
 Users upload a character separated values (CSV) file containing expenses reports of our employees
 
-- The applications accepts a CSV file.
-  - The first column is the user id
-  - The second column is the expenses category
-  - The 12 next columns are the monthly expenses expressed in euro
+The applications accepts a CSV file.
+- The first column is the user id
+- The second column is the expenses category
+- The 12 next columns are the monthly expenses expressed in euro
 
   |EmployeeId|Category|January|February|March|April|May|June|July|August|September|October|November|December|
   |:---------|:-------|------:|-------:|----:|----:|--:|---:|---:|-----:|--------:|------:|-------:|-------:|
