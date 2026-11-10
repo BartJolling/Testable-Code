@@ -42,8 +42,6 @@ Demo 1 is a class library, so run its tests from the repository root:
 dotnet test .\Demo01.TestDrivenDevelopment.Test\Demo01.TestDrivenDevelopment.Test.csproj
 ```
 
-## Demo 02 - Layered Architecture
-
 ## Demo 02 – Layered Architecture
 
 ### Traditional Layered Architecture
