@@ -14,7 +14,7 @@
     <ProjectReference Include="..\Shared.TestableCode.Database\Shared.TestableCode.Database.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.1" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.2" />
     <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.14" />
   <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.14" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
